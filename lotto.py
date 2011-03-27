@@ -15,4 +15,12 @@ def getLottoNumbers():
 
     return numbers
 
+def checkWinningNumbers(winning, mynumbers):
+  common = []
+  for number in mynumbers:
+    if number in winning:
+      common.append(number)
+
+  return common
+
 print getLottoNumbers()
