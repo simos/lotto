@@ -54,4 +54,12 @@ for i in range(0, stiles):
 winnings = exari * 1400000 + pentariena * 50000 + pentari * 1500 + tessari * 30 + triari * 1.5
 expense = stiles * 0.5
 
-print "Ξοδέψατε", expense, "ευρώ και κερδίσατε", winnings
+print 'Παίξατε', stiles, 'στήλες (', expense, 'ευρώ) και κερδίσατε'
+print
+print '  Εξάρια   : %(val)9d %(euro)9d €' % { 'val': exari, 'euro': exari * 1400000 }
+print '  Πεντάρια+: %(val)9d %(euro)9d €' % { 'val': pentariena, 'euro': pentariena * 50000 }
+print '  Πεντάρια : %(val)9d %(euro)9d €' % { 'val': pentari, 'euro': pentari * 1500 }
+print '  Τεσσάρια : %(val)9d %(euro)9d €' % { 'val': tessari, 'euro': tessari * 30 }
+print '  Τριάρι   : %(val)9d %(euro)9d €' % { 'val': triari, 'euro': triari * 1.5 }
+print '  ΣΥΝΟΛΟ --> %(val)9s %(euro)9d €' % { 'val': ' ', 'euro': winnings }
+print
