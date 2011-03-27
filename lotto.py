@@ -23,4 +23,9 @@ def checkWinningNumbers(winning, mynumbers):
 
   return common
 
-print getLottoNumbers()
+winning_numbers = [3, 13, 14, 41, 43, 49]
+
+my_numbers = getLottoNumbers()
+result = checkWinningNumbers(winning_numbers, my_numbers)
+print "Πιάσατε", result
+
