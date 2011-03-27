@@ -8,12 +8,12 @@
 της διανομής σας.
 Έπειτα, εκτελέστε
 
-git clone git://github.com/simos/myproject.git
+git clone git://github.com/simos/lotto.git
 
-και στον υποκατάλογο myproject/ θα δείτε τον πηγαίο κώδικα.
+και στον υποκατάλογο lotto/ θα δείτε τον πηγαίο κώδικα.
 Μετά,
 
-$ cd myproject
+$ cd lotto 
 $ python lotto.py
 Παίξατε 100000 στήλες ( 50000.0 ευρώ) και κερδίσατε
 
