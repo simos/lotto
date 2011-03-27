@@ -61,5 +61,5 @@ print '  Πεντάρια+: %(val)9d %(euro)9d €' % { 'val': pentariena, 'euro
 print '  Πεντάρια : %(val)9d %(euro)9d €' % { 'val': pentari, 'euro': pentari * 1500 }
 print '  Τεσσάρια : %(val)9d %(euro)9d €' % { 'val': tessari, 'euro': tessari * 30 }
 print '  Τριάρι   : %(val)9d %(euro)9d €' % { 'val': triari, 'euro': triari * 1.5 }
-print '  ΣΥΝΟΛΟ --> %(val)9s %(euro)9d €' % { 'val': ' ', 'euro': winnings }
 print
+print '  ΣΥΝΟΛΟ --> %(val)9s %(euro)9d €' % { 'val': ' ', 'euro': winnings }
