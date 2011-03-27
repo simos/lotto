@@ -3,5 +3,13 @@
 
 import random
 
-for i in range(0, 6):
-  print random.randint(1, 49)
+numbers = []
+
+while len(numbers) < 6:
+  candidate = random.randint(1, 49)
+  while candidate in numbers:
+    candidate = random.randint(1, 49)
+  numbers.append(candidate)
+numbers.sort()
+
+print numbers
