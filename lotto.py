@@ -3,13 +3,16 @@
 
 import random
 
-numbers = []
+def getLottoNumbers():
+    numbers = []
 
-while len(numbers) < 6:
-  candidate = random.randint(1, 49)
-  while candidate in numbers:
-    candidate = random.randint(1, 49)
-  numbers.append(candidate)
-numbers.sort()
+    while len(numbers) < 6:
+        candidate = random.randint(1, 49)
+        while candidate in numbers:
+            candidate = random.randint(1, 49)
+        numbers.append(candidate)
+    numbers.sort()
 
-print numbers
+    return numbers
+
+print getLottoNumbers()
