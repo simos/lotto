@@ -63,3 +63,10 @@ print '  Τεσσάρια : %(val)9d %(euro)9d €' % { 'val': tessari, 'euro': 
 print '  Τριάρι   : %(val)9d %(euro)9d €' % { 'val': triari, 'euro': triari * 1.5 }
 print
 print '  ΣΥΝΟΛΟ --> %(val)9s %(euro)9d €' % { 'val': ' ', 'euro': winnings }
+print 
+
+if winnings > stiles * 0.5:
+  print 'Συνολικά είχατε κέρδος ', winnings - expense, 'ευρώ'
+else:
+  print 'Είχατε ζημιά ', expense - winnings, 'ευρώ'
+  print 'ΧΑΣΑΤΕ το %(loss)2.0f %% του ποσού που παίξατε' % { 'loss':  ((expense - winnings) * 100)/expense }
