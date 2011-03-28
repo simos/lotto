@@ -11,13 +11,21 @@ def getLottoNumbers():
     """
     numbers = []
 
+    # Όσο η λίστα numbers έχει λιγότερα από έξι νούμερα,
     while len(numbers) < 6:
+        # Παράγουμε ένα υποψήφιο ψευδοτυχαίο νούμερο.
         candidate = random.randint(1, 49)
+        # Όσο ο υποψήφιος είναι ήδη στη στήλη,
         while candidate in numbers:
+            # παράγουμε νέο υποψήφιο.
             candidate = random.randint(1, 49)
+        # Ο υποψήφιος είναι πραγματικά νέο νούμερο, οπότε εισάγουμε
+        # στη στήλη.
         numbers.append(candidate)
+    # Εδώ έχει παραχθεί η στήλη numbers, και την ταξινομούμε.
     numbers.sort()
 
+    # Επιστρέφουμε τη στήλη, ως λίστα με τα έξι νούμερα.
     return numbers
 
 def checkWinningNumbers(winning, mynumbers):
@@ -25,11 +33,18 @@ def checkWinningNumbers(winning, mynumbers):
   Συγκρίνει τη στήλη που παίξαμε με τη νικήτρια στήλη.
   Επιστρέφει μια λίστα με τα κοινά νούμερα.
   """
+  # Δημιουργούμε μια κενή λίστα με όνομα common.
   common = []
+  # Για κάθε νούμερο στη στήλη (που «παίξαμε»),
   for number in mynumbers:
+    # Αν το νούμερο είναι στη νικήτρια στήλη, 
     if number in winning:
+      # τότε το προσθέτουμε στη λίστα common.
       common.append(number)
 
+  # Επιστρέφουμε τη λίστα common με τα κοινά νούμερα.
+  # Μπορεί να είναι κενή (καμιά επιτυχία) ή να έχει 
+  # μέχρι έξι νούμερα (για «εξάρι»).
   return common
 
 # Χρησιμοποιούμε την παρακάτω λίστα ως νικήτρια στήλη.
@@ -63,16 +78,26 @@ triari = 0
 # στήλης με τη νικήτρια στήλη. Για παράδειγμα, αν τα κοινά
 # νούμερα είναι έξι, τότε είναι «εξάρι».
 for i in range(0, stiles):
+  # Εδώ παράγουμε μια στήλη και την τοποθετούμε στη λίστα mynumbers.
   mynumbers = getLottoNumbers()
+  # Η λίστα result περιλαμβάνει τα κοινά νούμερα μεταξύ 
+  # της στήλης μας και της νικήτριας στήλης.
   result = checkWinningNumbers(winning_numbers, mynumbers)
+  # Αν η λίστα result έχει μέγεθος έξι, τότε πρόσθεσε 1 στο μετρητή για τα εξάρια.
   if len(result) == 6:
     exari = exari + 1
+  # διαφορετικά, αν η λίστα result έχει μέγεθος πέντε και ο special είναι στη στήλη μας, 
+  # τότε πρόσθεσε 1 στο μετρητή για τα πεντάρια συν ένα.
   elif len(result) == 5 and winning_special in mynumbers:
     pentariena = pentariena + 1
+  # διαφορετικά, αν η λίστα result έχει μέγεθος πέντε και ο special δεν είναι στη στήλη μας, 
+  # τότε πρόσθεσε 1 στο μετρητή για τα πεντάρια συν ένα.
   elif len(result) == 5 and winning_special not in mynumbers:
     pentari = pentari + 1
+  # διαφορετικά, αν η λίστα result έχει μέγεθος τέσσερα, τότε πρόσθεσε 1 στο μετρητή για τα τεσσάρια.
   elif len(result) == 4:
     tessari = tessari + 1
+  # διαφορετικά, αν η λίστα result έχει μέγεθος τρία, τότε πρόσθεσε 1 στο μετρητή για τα τριάρια.
   elif len(result) == 3:
     triari = triari + 1
 
