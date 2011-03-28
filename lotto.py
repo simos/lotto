@@ -13,9 +13,7 @@ def getLottoNumbers():
         numbers.append(candidate)
     numbers.sort()
 
-    special = random.randint(1, 49)
-
-    return numbers, special
+    return numbers
 
 def checkWinningNumbers(winning, mynumbers):
   common = []
@@ -32,19 +30,18 @@ stiles = 100000
 exari = 0
 pentariena = 0
 pentari = 0
-pentari = 0
 tessari = 0
 triari = 0
 
 
 for i in range(0, stiles):
-  mynumbers, myspecial = getLottoNumbers()
+  mynumbers = getLottoNumbers()
   result = checkWinningNumbers(winning_numbers, mynumbers)
   if len(result) == 6:
     exari = exari + 1
-  elif len(result) == 5 and myspecial == winning_special:
+  elif len(result) == 5 and winning_special in mynumbers:
     pentariena = pentariena + 1
-  elif len(result) == 5 and myspecial != winning_special:
+  elif len(result) == 5 and winning_special not in mynumbers:
     pentari = pentari + 1
   elif len(result) == 4:
     tessari = tessari + 1
