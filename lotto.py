@@ -53,13 +53,13 @@ expense = stiles * 0.5
 
 print 'Παίξατε', stiles, 'στήλες (', expense, 'ευρώ) και κερδίσατε'
 print
-print '  Εξάρια   : %(val)9d %(euro)9d €' % { 'val': exari, 'euro': exari * 1400000 }
-print '  Πεντάρια+: %(val)9d %(euro)9d €' % { 'val': pentariena, 'euro': pentariena * 50000 }
-print '  Πεντάρια : %(val)9d %(euro)9d €' % { 'val': pentari, 'euro': pentari * 1500 }
-print '  Τεσσάρια : %(val)9d %(euro)9d €' % { 'val': tessari, 'euro': tessari * 30 }
-print '  Τριάρι   : %(val)9d %(euro)9d €' % { 'val': triari, 'euro': triari * 1.5 }
+print '  Εξάρια     : %(val)9d %(euro)9.2f €' % { 'val': exari, 'euro': exari * 1400000 }
+print '  Πεντάρια+1 : %(val)9d %(euro)9.2f €' % { 'val': pentariena, 'euro': pentariena * 50000 }
+print '  Πεντάρια   : %(val)9d %(euro)9.2f €' % { 'val': pentari, 'euro': pentari * 1500 }
+print '  Τεσσάρια   : %(val)9d %(euro)9.2f €' % { 'val': tessari, 'euro': tessari * 30 }
+print '  Τριάρια    : %(val)9d %(euro)9.2f €' % { 'val': triari, 'euro': triari * 1.5 }
 print
-print '  ΣΥΝΟΛΟ --> %(val)9s %(euro)9d €' % { 'val': ' ', 'euro': winnings }
+print '  ΣΥΝΟΛΟ -->   %(val)9s %(euro)9.2f €' % { 'val': ' ', 'euro': winnings }
 print 
 
 if winnings > stiles * 0.5:
